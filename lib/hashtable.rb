@@ -15,6 +15,13 @@ class HashTable
   end
 
   def get(key)
+    numeric_key = _calculate(key)
+
+    if @_array[numeric_key].nil?
+      nil
+    else
+      @_array[numeric_key].find(key).data
+    end
   end
 
   def put(key, value)
