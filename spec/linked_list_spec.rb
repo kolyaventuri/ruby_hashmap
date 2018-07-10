@@ -22,6 +22,17 @@ describe LinkedList do
     expect(ll.next.data).to be(data2)
   end
 
+  it 'should be able to add more than 2 nodes' do
+    ll = LinkedList.new('key', data)
+
+    ll.add('key2', data2)
+    ll.add('key3', data3)
+
+    expect(ll.next.next).to_not be_nil
+    expect(ll.next.next).to be_instance_of(LinkedList)
+    expect(ll.next.next.data).to be(data3)
+  end
+
   it 'should be able to traverse the list' do
     ll = LinkedList.new('key', data)
 

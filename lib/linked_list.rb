@@ -18,4 +18,16 @@ class LinkedList
 
     @next.find(data)
   end
+
+  def to_s
+    result = []
+    curr = self
+
+    while curr != nil
+      result.push(curr.data)
+      curr = curr.next
+    end
+
+    result.join(',')
+  end
 end
