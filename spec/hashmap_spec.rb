@@ -56,6 +56,6 @@ describe HashTable do
     ht.put('key', 'data')
 
     result = ht.put('key', 'other data')
-    expect(result).to be_false
+    expect(result).to be(false)
   end
 end
