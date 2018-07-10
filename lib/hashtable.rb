@@ -22,12 +22,9 @@ class HashTable
   def put(key, value)
     numeric_key = _calculate(key)
 
-    if @_array[numeric_key].nil?
-      @_array[numeric_key] = LinkedList.new(key, value)
-    elsif @_array[numeric_key].find(key).nil?
-      @_array[numeric_key].add(key, value)
-    end
-
+    @_array[numeric_key] ||= LinkedList.new(key, value)
+    return @_array[numeric_key].add(key, value) if @_array[numeric_key].find(key).nil?
+    
     false
   end
 
