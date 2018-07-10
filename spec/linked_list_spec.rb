@@ -21,4 +21,19 @@ describe LinkedList do
     expect(ll.next).to be_instance_of(LinkedList)
     expect(ll.next.data).to be(data2)
   end
+
+  it 'should be able to traverse the list' do
+    ll = LinkedList.new(data)
+
+    ll.add(data2)
+    node = ll.add(data3)
+
+    expect(ll.find(data3)).to be(node)
+  end
+
+  it 'should return nil if no node is found' do
+    ll = LinkedList.new(data)
+
+    expect(ll.find(data3)).to be_nil
+  end
 end
