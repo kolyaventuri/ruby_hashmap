@@ -23,7 +23,6 @@ class HashTable
     if @_array[numeric_key].nil?
       @_array[numeric_key] = LinkedList.new(value)
     else
-      binding.pry
       return false unless @_array[numeric_key].find_by_key(key).nil?
       @_array[numeric_key].add(value)
     end

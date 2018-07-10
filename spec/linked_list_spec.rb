@@ -15,7 +15,7 @@ describe LinkedList do
   it 'should accept a new node' do
     ll = LinkedList.new(data)
 
-    ll.add(data2)
+    ll.add('key', data2)
 
     expect(ll.next).to_not be_nil
     expect(ll.next).to be_instance_of(LinkedList)
@@ -25,15 +25,16 @@ describe LinkedList do
   it 'should be able to traverse the list' do
     ll = LinkedList.new(data)
 
-    ll.add(data2)
-    node = ll.add(data3)
+    ll.add('key', data2)
+    node = ll.add('key2', data3)
 
-    expect(ll.find(data3)).to be(node)
+    expect(ll.find('key2')).to be(node)
   end
 
   it 'should return nil if no node is found' do
     ll = LinkedList.new(data)
 
-    expect(ll.find(data3)).to be_nil
+    expect(ll.find('key')).to be_nil
   end
+
 end
