@@ -35,7 +35,7 @@ class HashTable
     end
   end
 
-  def print
+  def to_s
     @_array.map.with_index do |key, index|
       "#{index}->#{key.to_s}"
     end.join('\n')
