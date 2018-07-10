@@ -71,4 +71,16 @@ describe HashTable do
 
     expect(ht.get(key)).to eq(value)
   end
+
+  it 'should be able to print the linked list' do
+    ht = HashTable.new
+
+    ht.put('key', '1') # 9
+    ht.put('be', '2') # 9
+    ht.put('Hello', '3') # 0
+
+    expected = '0->3\n1->\n2->\n3->\n4->\n5->\n6->\n7->\n8->\n9->1,2'
+
+    expect(ht.print).to eq(expected)
+  end
 end
