@@ -10,4 +10,11 @@ class LinkedList
   def add(value)
     @next = LinkedList.new(value)
   end
+
+  def find(data)
+    return self if @data == data
+    return nil if @next.nil?
+    
+    @next.find(data)
+  end
 end
