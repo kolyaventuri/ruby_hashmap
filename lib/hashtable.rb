@@ -3,7 +3,7 @@ class HashTable
   attr_reader :_array
 
   def initialize
-    @_array = Array.new(10, nil)
+    @_array = Array.new(MAX_LENGTH, nil)
   end
 
   def _calculate(key)
