@@ -58,4 +58,17 @@ describe HashTable do
     result = ht.put('key', 'other data')
     expect(result).to be(false)
   end
+
+  it 'should be able to retrieve a key' do
+    ht = HashTable.new
+
+    key = 'name'
+    value = 'George'
+
+    ht.put('key', 'data')
+    ht.put('key2', 'data2')
+    ht.put(key, value)
+
+    expect(ht.get(key)).to eq(value)
+  end
 end
