@@ -18,5 +18,10 @@ class HashTable
   end
 
   def put(key, value)
+    numeric_key = _calculate(key)
+
+    if @_array[numeric_key].nil?
+      @_array[numeric_key] = LinkedList.new(value)
+    end
   end
 end
