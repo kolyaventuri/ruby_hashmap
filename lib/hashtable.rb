@@ -34,4 +34,10 @@ class HashTable
       @_array[numeric_key].add(key, value)
     end
   end
+
+  def print
+    @_array.map.with_index do |key, index|
+      "#{index}->#{key.to_s}"
+    end.join('\n')
+  end
 end
