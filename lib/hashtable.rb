@@ -21,10 +21,10 @@ class HashTable
     numeric_key = _calculate(key)
 
     if @_array[numeric_key].nil?
-      @_array[numeric_key] = LinkedList.new(value)
+      @_array[numeric_key] = LinkedList.new(key, value)
     else
-      return false unless @_array[numeric_key].find_by_key(key).nil?
-      @_array[numeric_key].add(value)
+      return false unless @_array[numeric_key].find(key).nil?
+      @_array[numeric_key].add(key, value)
     end
   end
 end
