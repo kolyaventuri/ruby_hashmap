@@ -1,6 +1,6 @@
 class LinkedList
   attr_reader :data
-  attr_reader :next
+  attr_accessor :next
 
   def initialize(key, value)
     @data = value
@@ -9,7 +9,11 @@ class LinkedList
   end
 
   def add(key, value)
-    @next = LinkedList.new(key, value)
+    curr = self
+    while curr.next != nil
+      curr = curr.next
+    end
+    curr.next = LinkedList.new(key, value)
   end
 
   def find(data)
