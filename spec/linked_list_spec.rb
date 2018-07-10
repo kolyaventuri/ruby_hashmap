@@ -37,4 +37,15 @@ describe LinkedList do
     expect(ll.find('key2')).to be_nil
   end
 
+  it 'should be able to generate a string representation of the data' do
+    ll = LinkedList.new('key', data)
+
+    ll.add('key', data2)
+    ll.add('key2', data3)
+
+    expected = "#{data},#{data2},#{data3}"
+
+    expect(ll.to_s).to eq(expected)
+  end
+
 end
