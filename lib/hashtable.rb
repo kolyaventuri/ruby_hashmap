@@ -40,4 +40,8 @@ class HashTable
       "#{index}->#{key.to_s}"
     end.join('\n')
   end
+
+  def print
+    puts self.to_s
+  end
 end
