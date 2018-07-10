@@ -1,5 +1,10 @@
 class HashTable
   MAX_LENGTH = 10
+  attr_reader :_array
+
+  def initialize
+    @_array = Array.new(10, nil)
+  end
 
   def _calculate(key)
     chars = key.chars
@@ -12,6 +17,6 @@ class HashTable
   def get(key)
   end
 
-  def put(value)
+  def put(key, value)
   end
 end

@@ -34,7 +34,7 @@ describe HashTable do
 
     ht.put('key', value)
 
-    expect(ht._array[keyValue]).to be_an(Array)
+    expect(ht._array[keyValue]).to be_a(LinkedList)
     expect(ht._array[keyValue].data).to eq(value)
   end
 end
