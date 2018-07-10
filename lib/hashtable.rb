@@ -22,6 +22,8 @@ class HashTable
 
     if @_array[numeric_key].nil?
       @_array[numeric_key] = LinkedList.new(value)
+    else
+      @_array[numeric_key].add(value)
     end
   end
 end

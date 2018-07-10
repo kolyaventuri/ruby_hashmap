@@ -47,6 +47,6 @@ describe HashTable do
     ht.put('be', value) # be and key both have the same calculated value
 
     expect(ht._array[keyValue].next).to be_a(LinkedList)
-    expect(ht._array[keyValue].next).to eq(value)
+    expect(ht._array[keyValue].next.data).to eq(value)
   end
 end
