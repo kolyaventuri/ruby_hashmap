@@ -1,4 +1,4 @@
-class HashMap
+class HashTable
   MAX_LENGTH = 10
 
   def [](key)
