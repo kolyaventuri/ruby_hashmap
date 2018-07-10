@@ -4,7 +4,7 @@ describe HashTable do
   it 'should return nil for non-existent keys' do
     ht = HashTable.new
 
-    expect(ht['key']).to be_nil
+    expect(ht.get('key')).to be_nil
   end
 
   it 'should be able to calculate a numeric key' do
