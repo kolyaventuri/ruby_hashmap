@@ -2,6 +2,6 @@ class LinkedList
   attr_reader :data
 
   def initialize(value)
-    @data = data
+    @data = value
   end
 end
