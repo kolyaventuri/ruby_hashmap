@@ -49,4 +49,13 @@ describe HashTable do
     expect(ht._array[keyValue].next).to be_a(LinkedList)
     expect(ht._array[keyValue].next.data).to eq(value)
   end
+
+  it 'should reject duplicate keys' do
+    ht = HashTable.new
+
+    ht.put('key', 'data')
+
+    result = ht.put('key', 'other data')
+    expect(result).to be_false
+  end
 end
