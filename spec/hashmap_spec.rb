@@ -37,4 +37,16 @@ describe HashTable do
     expect(ht._array[keyValue]).to be_a(LinkedList)
     expect(ht._array[keyValue].data).to eq(value)
   end
+
+  it 'should add to the linked list if the keys added are the same' do
+    ht = HashTable.new
+    keyValue = 9
+    value = 'something else'
+
+    ht.put('key', 'something')
+    ht.put('be', value) # be and key both have the same calculated value
+
+    expect(ht._array[keyValue].next).to be_a(LinkedList)
+    expect(ht._array[keyValue].next).to eq(value)
+  end
 end
