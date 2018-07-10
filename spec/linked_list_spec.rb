@@ -6,16 +6,16 @@ describe LinkedList do
   let(:data3) { 20 }
 
   it 'should hold data' do
-    ll = LinkedList.new(data)
+    ll = LinkedList.new('key', data)
 
     expect(ll.data).to be(data)
     expect(ll.next).to be_nil
   end
 
   it 'should accept a new node' do
-    ll = LinkedList.new(data)
+    ll = LinkedList.new('key', data)
 
-    ll.add('key', data2)
+    ll.add('key2', data2)
 
     expect(ll.next).to_not be_nil
     expect(ll.next).to be_instance_of(LinkedList)
@@ -23,7 +23,7 @@ describe LinkedList do
   end
 
   it 'should be able to traverse the list' do
-    ll = LinkedList.new(data)
+    ll = LinkedList.new('key', data)
 
     ll.add('key', data2)
     node = ll.add('key2', data3)
@@ -32,9 +32,9 @@ describe LinkedList do
   end
 
   it 'should return nil if no node is found' do
-    ll = LinkedList.new(data)
+    ll = LinkedList.new('key', data)
 
-    expect(ll.find('key')).to be_nil
+    expect(ll.find('key2')).to be_nil
   end
 
 end
