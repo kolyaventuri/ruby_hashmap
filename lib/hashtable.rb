@@ -7,11 +7,7 @@ class HashTable
   end
 
   def _calculate(key)
-    chars = key.chars
-    codes = chars.map { |char| char.ord }
-    total = codes.sum
-
-    total % MAX_LENGTH
+    key.chars.map(&:ord).sum % MAX_LENGTH
   end
 
   def get(key)
@@ -24,7 +20,7 @@ class HashTable
 
     @_array[numeric_key] ||= LinkedList.new(key, value)
     return @_array[numeric_key].add(key, value) if @_array[numeric_key].find(key).nil?
-    
+
     false
   end
 
